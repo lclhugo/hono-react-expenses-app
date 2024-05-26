@@ -1,4 +1,4 @@
-# bunserver
+# small course to learn how to use Hono and React
 
 To install dependencies:
 
