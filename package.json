@@ -3,11 +3,11 @@
   "module": "index.ts",
   "type": "module",
   "scripts": {
-    "start": "bun index.ts",
-    "dev": "bun --watch index.ts",
+    "start": "bun server/index.ts",
+    "dev": "bun --watch server/index.ts",
     "lint": "eslint --ext .ts --max-warnings 0",
     "lint:fix": "eslint --ext .ts,.tsx --fix",
-    "format": "prettier --write **/*.{ts,tsx}"
+    "format": "prettier --write **/*.{ts,js}"
   },
   "devDependencies": {
     "bun-types": "latest",
@@ -24,6 +24,8 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
-    "hono": "^4.3.11"
+    "@hono/zod-validator": "^0.2.1",
+    "hono": "^4.3.11",
+    "zod": "^3.23.8"
   }
 }

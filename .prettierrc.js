@@ -1,9 +1,5 @@
-module.exports = {
-  printWidth: 80,
-  tabWidth: 2,
-  singleQuote: true,
-  trailingComma: 'all',
-  semi: false,
-  arrowParens: 'avoid',
-  endOfLine: 'lf',
-}
+export const printWidth = 80;
+export const tabWidth = 2;
+export const singleQuote = true;
+export const trailingComma = "all";
+export const semi = true;
