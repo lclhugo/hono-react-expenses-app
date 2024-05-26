@@ -1,13 +1,14 @@
-import { Hono } from "hono";
-import { logger } from "hono/logger";
+import { Hono } from 'hono'
+import { logger } from 'hono/logger'
 
-const app = new Hono();
+const app = new Hono()
 
-app.use("*", logger());
+app.use('*', logger())
 
-app.get("/test", (c) => {
+app.get('/test', c => {
   return c.json({
-    hello: "world",});
-});
+    hello: 'world',
+  })
+})
 
 export default app

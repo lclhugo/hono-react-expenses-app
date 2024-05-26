@@ -1,8 +1,8 @@
-import app from "./app";
+import app from './app'
 
 const port = process.env.PORT || 3000
 Bun.serve({
- fetch : app.fetch
-});
+  fetch: app.fetch,
+})
 
-console.log("server running");
+console.log('server running')
