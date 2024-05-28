@@ -1,15 +1,25 @@
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
 import "./App.css";
 
-
 function App() {
-  const [totalSpend] = useState(0);
-
+  const [totalSpent, setTotalSpent] = useState(0);
   useEffect(() => {
-    fetch("/api/expenses/total-spent")
+    async function fetchTotalSpend() {
+      const res = await fetch("/api/expenses/total-spent");
+      const data = await res.json();
+      setTotalSpent(data.totalSpend);
+    }
+    fetchTotalSpend();
   }, []);
 
   return (
@@ -20,7 +30,7 @@ function App() {
           <CardDescription>The total amount you've spent</CardDescription>
         </CardHeader>
         <CardContent>
-          <p>{totalSpend}</p>
+          <p>{totalSpent}</p>
         </CardContent>
         <CardFooter>
           <Button>Button</Button>
@@ -31,4 +41,3 @@ function App() {
 }
 
 export default App;
-
