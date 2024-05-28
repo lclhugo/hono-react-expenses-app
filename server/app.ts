@@ -7,7 +7,7 @@ const app = new Hono();
 
 app.use("*", logger());
 
-app.route("/api/expenses", expensesRoute);
+app.basePath("/api").route("/expenses", expensesRoute);
 
 app.get("*", serveStatic({ root: "./frontend/dist" }));
 app.get("*", serveStatic({ root: "./frontend/dist/index.html" }));
